@@ -9,9 +9,7 @@ msavin:mongol
 aldeed:autoform
 aldeed:collection2
 iron:router
-aldeed:autoform-bs-datepicker
 aldeed:tabular
-reywood:publish-composite
 dburles:collection-helpers
 autopublish
 aldeed:delete-button
