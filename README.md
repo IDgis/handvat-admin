@@ -1,0 +1,1 @@
+https://github.com/mpowaga/meteor-autoform-summernote

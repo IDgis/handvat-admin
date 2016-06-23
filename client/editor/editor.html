@@ -1,0 +1,14 @@
+<template name="editor">
+
+{{#autoForm collection="Texts" type="insert" id="textform" doc=serviceDoc type=formType}}
+      <fieldset>
+		{{> afQuickField name="title"}}
+		{{> afQuickField name="texttype" options=textTypes firstOption='Selecteer...' }}
+		{{> afQuickField name="content"  type= 'summernote'  class= 'editor' settings=toolBarSettings}}
+
+
+       </fieldset>  
+       <button id="save" type="submit" class="btn btn-primary">Opslaan</button> 
+       <a id="return" class="btn btn-primary">Annuleren</a>
+ {{/autoForm}}
+</template>
