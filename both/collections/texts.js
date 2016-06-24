@@ -9,7 +9,7 @@ Texts.attachSchema (new SimpleSchema({
   texttype: {
 	 type: String,
 	 label: "Type text", 
-	 allowedValues: ["lanschapstype", "sector", "kernkwaliteit", "leidend_beginsel", "ontwerp_principe"],
+	 allowedValues: ["landschapstype", "sector", "kernkwaliteit", "leidend beginsel", "ontwerpprincipe"],
 
   },
   content: {
