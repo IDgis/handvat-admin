@@ -14,7 +14,8 @@ Template.editor.helpers({
 		 }
 	},
 	textTypes: function () {
-		var textTypes = [{label: 'landschapstype', value: 'lanschapstype'},{label: 'sector beschrijving', value: 'sector'},{label: 'kernkwaliteit', value: 'kernkwaliteit'},{label: 'leidend beginsel', value: 'leidend_beginsel'},
+		var textTypes = [{label: 'landschapstype', value: 'landschapstype'},{label: 'sector beschrijving', value: 'sector'},
+		                 {label: 'kernkwaliteit', value: 'kernkwaliteit'},{label: 'leidend beginsel', value: 'leidend beginsel'},
 		                 {label: 'ontwerpprincipe', value: 'ontwerpprincipe'}];
 		//ontwerpprincipe'];
 		return textTypes;
