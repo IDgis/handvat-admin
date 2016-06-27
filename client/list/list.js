@@ -14,7 +14,8 @@ Template.list.events({
 	  Router.go('edit', {_id: this._id});
   },
   'click .insert-text': function () {
-	  Session.set("selectedTextId", null);
+      Session.set("selectedTextId", null);
+      Router.go('add');
   },
   'click .delete-text': function() {
 	  //zie https://github.com/aldeed/meteor-delete-button
