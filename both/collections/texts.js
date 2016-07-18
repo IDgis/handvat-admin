@@ -1,26 +1,41 @@
 Texts = new Mongo.Collection("texts");
 
 Texts.attachSchema (new SimpleSchema({
-  title: {
-    type: String,
-    label: "Titel",
-    max: 200
-  },
-  texttype: {
-	 type: String,
-	 label: "Type text", 
-	 allowedValues: ["landschapstype", "sector", "kernkwaliteit", "leidend beginsel", "ontwerpprincipe"],
-
-  },
-  content: {
-    type: String,
-    label: "",
-
-  }
+	name: {
+		type: String,
+		label: "Naam",
+		max: 200
+	},
+	texttype: {
+		type: String,
+		label: "Type", 
+		allowedValues: ["landschapstype", "sector", "kernkwaliteit", "leidend_beginsel", "ontwerpprincipe"],
+		autoform: {
+	      options: [
+	        {label: 'landschapstype', value: 'landschapstype'},
+	        {label: 'sector', value: 'sector'},
+	        {label: 'kernkwaliteit', value: 'kernkwaliteit'},
+	        {label: 'leidend beginsel', value: 'leidend_beginsel'},
+	        {label: 'ontwerpprincipe', value: 'ontwerpprincipe'}
+	      ]
+	    }
+	},
+	content: {
+		type: String,
+		label: "Inhoud",
+		autoform: {
+			afFieldInput: {
+				type: 'summernote',
+				settings: {
+					height: 200
+				}
+			}
+		}
+	}
 }));
 
 Texts.allow({
-	  insert: function () { return true; },
-	  update: function () { return true; },
-	  remove: function () { return true; }
-})
+	insert: function () { return true; },
+	update: function () { return true; },
+	remove: function () { return true; }
+});
