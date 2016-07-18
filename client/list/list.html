@@ -1,33 +1,34 @@
 <template name="list">
-      <h2>Teksten</h2>
-      <table class="table table-condensed">
-        <thead>
-          <tr>
-            <td>Title</td>
-            <td>Type</td>
-            <td style="width: 70px"></td>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each texts}}
-            <tr class="text-row {{#if isSelectedText}}selected{{/if}}">
-              <td>{{title}}</td>
-              <td>{{texttype}}</td>
-              <td style='white-space: nowrap'>
-	              <button class="btn btn-default edit-text" >
-						<a class="glyphicon glyphicon-edit"></a>
-				  </button>
-	              <a class="btn btn-warning delete-text">
-						<span class="glyphicon glyphicon-remove"></span>
-				  </a>  
-			  </td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-      <div type="button" class="btn btn-success col-sm-12 insert-text">
+	<h3>Teksten</h3>
+	{{#autoForm collection="Texts" id="textform"}}
+		{{> afQuickField name="texttype" id="text-filter" firstOption=false}}
+	{{/autoForm}}
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<td>Naam</td>
+				<td class="button-column-header"></td>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each texts}}
+				<tr class="text-row">
+					<td>{{name}}</td>
+					<td class="button-column">
+						<button class="btn btn-default edit-text" >
+							<a class="glyphicon glyphicon-edit"></a>
+						</button>
+						<a class="btn btn-warning delete-text">
+							<span class="glyphicon glyphicon-remove"></span>
+						</a>  
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<div type="button" class="btn btn-success col-sm-12 insert-text">
 		<a class="glyphicon glyphicon-plus create-btn">
 			<span class="create-btn-label">Maak een nieuwe tekst</span>
 		</a>
-	  </div>
+	</div>
 </template>

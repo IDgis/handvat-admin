@@ -1,9 +1,4 @@
-/.project
-/.settings/
-/.meteor/.id
-/.meteor/local
-/.meteor/platforms
-/.meteor/versions
-/.meteor/.finished-upgraders
+.project
+.meteor
 
 

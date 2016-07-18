@@ -1,14 +1,27 @@
 <template name="editor">
-
-{{#autoForm collection="Texts" type="insert" id="textform" doc=serviceDoc type=formType}}
-      <fieldset>
-		{{> afQuickField name="title"}}
-		{{> afQuickField name="texttype" options=textTypes firstOption='Selecteer...' }}
-		{{> afQuickField name="content"  type= 'summernote'  class= 'editor' settings=toolBarSettings}}
-
-
-       </fieldset>  
-       <button id="save" type="submit" class="btn btn-primary">Opslaan</button> 
-       <a id="return" class="btn btn-primary">Annuleren</a>
- {{/autoForm}}
+	{{#if isEqual formType 'insert'}}
+		<h3>Maak een nieuwe tekst</h3>
+	{{else}}
+		<h3>Wijzig een tekst</h3>
+	{{/if}}
+	
+	{{#if isEqual filterType 'geen'}}
+		<h4>U heeft geen type geselecteerd. Dit moet u vanuit de lijst doen.</h4>
+	{{else}}
+		<h4>Geselecteerd type: {{filterTypeLabel.label}}</h4>
+	{{/if}}
+	
+	{{#if isNotEqual filterType 'geen'}}
+		{{#autoForm collection="Texts" id="textform" type=formType doc=textDoc}}
+			<fieldset>
+				{{> afQuickField name="name"}}
+				{{> afQuickField name="texttype" type='hidden' value=filterType}}
+				{{> afQuickField name="content"}}
+			</fieldset>  
+		    <button id="save" type="submit" class="btn btn-primary">Opslaan</button>
+		    <a id="return" class="btn btn-primary">Annuleren</a>
+		 {{/autoForm}}
+	{{else}}
+		<a id="return" class="btn btn-primary">Annuleren</a>
+	{{/if}}	 
 </template>

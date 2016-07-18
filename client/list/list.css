@@ -3,3 +3,6 @@
 .create-btn:focus {color:white;text-decoration:none;}
 
 .create-btn-label {font-family:verdana;font-size:16px;}
+
+.button-column-header {width:70px;}
+.button-column {white-space: nowrap;}
