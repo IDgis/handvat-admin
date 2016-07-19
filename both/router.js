@@ -3,7 +3,11 @@ Router.configure({
 });
 
 Router.route('/handvat-admin/', {
-	name: 'list'
+	name: 'text'
+});
+
+Router.route('/coupling', {
+	name: 'coupling'
 });
 
 Router.route('/add', {
@@ -12,7 +16,7 @@ Router.route('/add', {
 });
 
 Router.route('/edit/:_id', function () {
-	var text = Texts.findOne({_id: this.params._id});
+	var text = Text.findOne({_id: this.params._id});
 	this.render('editor', {data: text});
 }, {
     name: 'edit'

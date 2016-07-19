@@ -1,3 +1,7 @@
+Template.editor.onRendered(function() {
+	Session.set('tab', null);
+});
+
 Template.editor.helpers({
 	isEqual: function(a, b) {
 		return a === b;
@@ -38,6 +42,6 @@ Template.editor.helpers({
 Template.editor.events({
 	'click #return': function() {
 		AutoForm.resetForm('textform');
-		Router.go('list');
+		Router.go('text');
 	}
 });

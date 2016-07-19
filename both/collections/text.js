@@ -1,6 +1,6 @@
-Texts = new Mongo.Collection("texts");
+Text = new Mongo.Collection("text");
 
-Texts.attachSchema (new SimpleSchema({
+Text.attachSchema (new SimpleSchema({
 	name: {
 		type: String,
 		label: "Naam",
@@ -27,14 +27,14 @@ Texts.attachSchema (new SimpleSchema({
 			afFieldInput: {
 				type: 'summernote',
 				settings: {
-					height: 500
+					height: 450
 				}
 			}
 		}
 	}
 }));
 
-Texts.allow({
+Text.allow({
 	insert: function () { return true; },
 	update: function () { return true; },
 	remove: function () { return true; }

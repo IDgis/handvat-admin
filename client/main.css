@@ -3,3 +3,4 @@
 #logos {width:50%;float:left;position:relative;padding-top:10px;}
 #logo-idgis {height:55px;padding-left:10px;}
 #logo-limburg {height:55px;}
+#tab-text:hover, #tab-coupling:hover {cursor:pointer;}

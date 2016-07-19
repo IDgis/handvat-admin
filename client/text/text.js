@@ -1,14 +1,15 @@
-Template.list.onRendered(function() {
+Template.text.onRendered(function() {
+	Session.set('tab', 'text');
 	Session.set('filterText', 'landschapstype');
 });
 
-Template.list.helpers({
-	texts: function(){
-		return Texts.find({ texttype: Session.get('filterText') });
+Template.text.helpers({
+	text: function() {
+		return Text.find({ texttype: Session.get('filterText') });
 	}
 });
 
-Template.list.events({
+Template.text.events({
 	'change #text-filter': function(e) {
 		Session.set('filterText', e.target.value);
 	},
@@ -21,6 +22,6 @@ Template.list.events({
 		Router.go('add');
 	},
 	'click .delete-text': function() {
-		Texts.remove({_id: this._id})
+		Text.remove({_id: this._id})
 	}
 });
