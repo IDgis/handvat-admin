@@ -27,7 +27,7 @@ Texts.attachSchema (new SimpleSchema({
 			afFieldInput: {
 				type: 'summernote',
 				settings: {
-					height: 200
+					height: 500
 				}
 			}
 		}
