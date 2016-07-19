@@ -18,3 +18,5 @@ johdirr:meteor-git-rev
 summernote:summernote
 mpowaga:autoform-summernote
 fortawesome:fontawesome
+djedi:sanitize-html
+djedi:sanitize-html-client
