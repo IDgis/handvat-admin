@@ -1,0 +1,26 @@
+<template name="couplingform">
+	{{#if isEqual formType 'insert'}}
+		<h3>Maak een nieuwe koppeling</h3>
+	{{else}}
+		<h3>Wijzig een koppeling</h3>
+	{{/if}}
+	
+	{{#if isEqual filterType 'geen'}}
+		<h4>U heeft geen type geselecteerd. Dit moet u vanuit de lijst doen.</h4>
+	{{else}}
+		<h4>Geselecteerd type: {{filterTypeLabel.label}}</h4>
+	{{/if}}
+	
+	{{#if isEqual filterType 'land_sector_kern_ontwerp'}}
+		{{#autoForm collection="CouplingOntwerp" id="couplingform" type=formType doc=couplingDoc}}
+			<fieldset>
+				{{> afQuickField name="landschapstype" options=(entiteitTypes 'landschapstype') firstOption=false}}
+				{{> afQuickField name="sector" options=(entiteitTypes 'sector') firstOption=false}}
+				{{> afQuickField name="kernkwaliteit" options=(entiteitTypes 'kernkwaliteit') firstOption=false}}
+				{{> afQuickField name="ontwerpprincipe" options=(entiteitTypes 'ontwerpprincipe') noselect=true firstOption=false}}
+			</fieldset>  
+		    <button id="save" type="submit" class="btn btn-primary">Opslaan</button>
+		    <a id="return" class="btn btn-primary">Annuleren</a>
+		 {{/autoForm}}
+	 {{/if}}
+</template>

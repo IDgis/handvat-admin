@@ -13,9 +13,9 @@ Template.main.helpers({
 
 Template.main.events({
 	'click #tab-text': function() { 
-		Router.go('text');
+		Router.go('textlist');
 	},
 	'click #tab-coupling': function() {
-		Router.go('coupling');
+		Router.go('couplinglist');
 	}
 });

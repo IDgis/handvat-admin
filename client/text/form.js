@@ -1,8 +1,8 @@
-Template.editor.onRendered(function() {
+Template.textform.onRendered(function() {
 	Session.set('tab', null);
 });
 
-Template.editor.helpers({
+Template.textform.helpers({
 	isEqual: function(a, b) {
 		return a === b;
 	},
@@ -27,7 +27,7 @@ Template.editor.helpers({
 		if(typeof Session.get('filterText') === 'undefined') {
 			return "geen";
 		} else {
-			return Type.findOne({ name: Session.get('filterText') });
+			return TextType.findOne({ name: Session.get('filterText') });
 		}
 	},
 	textDoc: function() {
@@ -39,9 +39,9 @@ Template.editor.helpers({
 	}
 });
 
-Template.editor.events({
+Template.textform.events({
 	'click #return': function() {
 		AutoForm.resetForm('textform');
-		Router.go('text');
+		Router.go('textlist');
 	}
 });
