@@ -20,3 +20,5 @@ mpowaga:autoform-summernote
 fortawesome:fontawesome
 djedi:sanitize-html
 djedi:sanitize-html-client
+accounts-password
+ian:accounts-ui-bootstrap-3

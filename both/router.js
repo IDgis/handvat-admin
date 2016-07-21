@@ -67,7 +67,8 @@ Router.map(function () {
 	    		   name: text.name,
 	    		   texttype: text.texttype,
 	    		   html: html,
-	    		   images: images
+	    		   images: images,
+	    		   userId: text.userId
 	    	   }
 	    	 );
 	      });

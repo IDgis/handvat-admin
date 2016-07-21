@@ -31,6 +31,9 @@ Text.attachSchema (new SimpleSchema({
 				}
 			}
 		}
+	},
+	userId: {
+		type: String,
 	}
 }));
 
