@@ -48,6 +48,9 @@ CouplingOntwerp.attachSchema (new SimpleSchema({
     	
     	return avs;
     }
+  },
+  userId: {
+	  type: String,
   }
 }));
 
