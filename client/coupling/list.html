@@ -4,6 +4,37 @@
 		<option value="leidend_beginsel">landschapstype - leidend beginsel</option>
 		<option value="land_sector_kern_ontwerp">landschapstype - sector - kernkwaliteit - ontwerpprincipe</option>
 	</select>
+	{{#if isEqual filterType 'leidend_beginsel'}}
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<td><b>Landschapstype</b></td>
+					<td><b>Leidende beginselen</b></td>
+					<td class="button-column-header"></td>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each couplingleidend}}
+					<tr class="text-row">
+						<td>{{getCouplingLeidend landschapstype}}</td>
+						<td>
+							{{#each leidend_beginsel}}
+								<span>{{getTextName this}}</span>
+							{{/each}}
+						</td>
+						<td class="button-column">
+							<button class="btn btn-default edit-coupling-leidend">
+								<a class="glyphicon glyphicon-edit"></a>
+							</button>
+							<a class="btn btn-warning delete-coupling-leidend">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>  
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	{{/if}}
 	{{#if isEqual filterType 'land_sector_kern_ontwerp'}}
 		<table class="table table-condensed">
 			<thead>
@@ -16,17 +47,17 @@
 			<tbody>
 				{{#each couplingontwerp}}
 					<tr class="text-row">
-						<td>{{getCoupling landschapstype sector kernkwaliteit}}</td>
+						<td>{{getCouplingOntwerp landschapstype sector kernkwaliteit}}</td>
 						<td>
 							{{#each ontwerpprincipe}}
-								<span>{{getOntwerpprincipe this}}</span>
+								<span>{{getTextName this}}</span>
 							{{/each}}
 						</td>
 						<td class="button-column">
-							<button class="btn btn-default edit-coupling">
+							<button class="btn btn-default edit-coupling-ontwerp">
 								<a class="glyphicon glyphicon-edit"></a>
 							</button>
-							<a class="btn btn-warning delete-coupling">
+							<a class="btn btn-warning delete-coupling-ontwerp">
 								<span class="glyphicon glyphicon-remove"></span>
 							</a>  
 						</td>

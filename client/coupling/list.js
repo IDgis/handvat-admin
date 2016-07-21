@@ -10,7 +10,10 @@ Template.couplinglist.helpers({
 	couplingontwerp: function() {
 		return CouplingOntwerp.find();
 	},
-	getCoupling: function(landschapstype, sector, kernkwaliteit, ontwerpprincipe) {
+	couplingleidend: function() {
+		return CouplingLeidend.find();
+	},
+	getCouplingOntwerp: function(landschapstype, sector, kernkwaliteit) {
 		var lt = Text.findOne({ _id: landschapstype });
 		var s = Text.findOne({ _id: sector });
 		var k = Text.findOne({ _id: kernkwaliteit });
@@ -19,7 +22,14 @@ Template.couplinglist.helpers({
 			return lt.name + " - " + s.name + " - " + k.name;
 		}
 	},
-	getOntwerpprincipe: function(id) {
+	getCouplingLeidend: function(landschapstype) {
+		var lt = Text.findOne({ _id: landschapstype });
+		
+		if(typeof lt !== 'undefined') {
+			return lt.name;
+		}
+	},
+	getTextName: function(id) {
 		var op = Text.findOne({ _id: id });
 		if(typeof op !== 'undefined') {
 			return op.name;
@@ -38,15 +48,22 @@ Template.couplinglist.events({
 	'change #coupling-filter': function(e) {
 		Session.set('filterCoupling', e.target.value);
 	},
-	'click .edit-coupling': function () { 
+	'click .edit-coupling-leidend': function () { 
 		Session.set("selectedCouplingId", this._id);
-		Router.go('couplingedit', {_id: this._id});
+		Router.go('couplingleidendedit', {_id: this._id});
+	},
+	'click .edit-coupling-ontwerp': function () { 
+		Session.set("selectedCouplingId", this._id);
+		Router.go('couplingontwerpedit', {_id: this._id});
 	},
 	'click .insert-coupling': function () {
 		Session.set("selectedCouplingId", null);
 		Router.go('couplingadd');
 	},
-	'click .delete-coupling': function() {
+	'click .delete-coupling-leidend': function() {
+		CouplingLeidend.remove({_id: this._id})
+	},
+	'click .delete-coupling-ontwerp': function() {
 		CouplingOntwerp.remove({_id: this._id})
 	}
 });

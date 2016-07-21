@@ -27,9 +27,16 @@ Router.route('/coupling/add', {
 	template: 'couplingform'
 });
 
-Router.route('/text/coupling/:_id', function () {
+Router.route('/coupling/leidend/:_id', function () {
+	var coupling = CouplingLeidend.findOne({_id: this.params._id});
+	this.render('couplingform', {data: coupling});
+}, {
+    name: 'couplingleidendedit'
+});
+
+Router.route('/coupling/ontwerp/:_id', function () {
 	var coupling = CouplingOntwerp.findOne({_id: this.params._id});
 	this.render('couplingform', {data: coupling});
 }, {
-    name: 'couplingedit'
+    name: 'couplingontwerpedit'
 });

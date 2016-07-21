@@ -45,8 +45,9 @@ Template.couplingform.helpers({
 });
 
 Template.couplingform.events({
-	'click #return': function() {
-		AutoForm.resetForm('couplingform');
+	'click .return': function() {
+		AutoForm.resetForm('couplingleidendform');
+		AutoForm.resetForm('couplingontwerpform');
 		Router.go('couplinglist');
 	}
 });
