@@ -1,4 +1,4 @@
-<template name="editor">
+<template name="textform">
 	{{#if isEqual formType 'insert'}}
 		<h3>Maak een nieuwe tekst</h3>
 	{{else}}
@@ -12,7 +12,7 @@
 	{{/if}}
 	
 	{{#if isNotEqual filterType 'geen'}}
-		{{#autoForm collection="Texts" id="textform" type=formType doc=textDoc}}
+		{{#autoForm collection="Text" id="textform" type=formType doc=textDoc}}
 			<fieldset>
 				{{> afQuickField name="name"}}
 				{{> afQuickField name="texttype" type='hidden' value=filterType}}

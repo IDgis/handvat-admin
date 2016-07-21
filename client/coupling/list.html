@@ -1,0 +1,74 @@
+<template name="couplinglist">
+	<h3>Koppelingen</h3>
+	<select id="coupling-filter" class="form-control">
+		<option value="leidend_beginsel">landschapstype - leidend beginsel</option>
+		<option value="land_sector_kern_ontwerp">landschapstype - sector - kernkwaliteit - ontwerpprincipe</option>
+	</select>
+	{{#if isEqual filterType 'leidend_beginsel'}}
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<td><b>Landschapstype</b></td>
+					<td><b>Leidende beginselen</b></td>
+					<td class="button-column-header"></td>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each couplingleidend}}
+					<tr class="text-row">
+						<td>{{getCouplingLeidend landschapstype}}</td>
+						<td>
+							{{#each leidend_beginsel}}
+								<span>{{getTextName this}}</span>
+							{{/each}}
+						</td>
+						<td class="button-column">
+							<button class="btn btn-default edit-coupling-leidend">
+								<a class="glyphicon glyphicon-edit"></a>
+							</button>
+							<a class="btn btn-warning delete-coupling-leidend">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>  
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	{{/if}}
+	{{#if isEqual filterType 'land_sector_kern_ontwerp'}}
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<td><b>Koppeling</b></td>
+					<td><b>Ontwerpprincipes</b></td>
+					<td class="button-column-header"></td>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each couplingontwerp}}
+					<tr class="text-row">
+						<td>{{getCouplingOntwerp landschapstype sector kernkwaliteit}}</td>
+						<td>
+							{{#each ontwerpprincipe}}
+								<span>{{getTextName this}}</span>
+							{{/each}}
+						</td>
+						<td class="button-column">
+							<button class="btn btn-default edit-coupling-ontwerp">
+								<a class="glyphicon glyphicon-edit"></a>
+							</button>
+							<a class="btn btn-warning delete-coupling-ontwerp">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>  
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	{{/if}}
+	<div type="button" class="btn btn-success col-sm-12 insert-coupling">
+		<a class="glyphicon glyphicon-plus create-btn">
+			<span class="create-btn-label">Maak een nieuwe koppeling</span>
+		</a>
+	</div>
+</template>

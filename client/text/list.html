@@ -1,17 +1,17 @@
-<template name="list">
+<template name="textlist">
 	<h3>Teksten</h3>
-	{{#autoForm collection="Texts" id="textform"}}
+	{{#autoForm collection="Text" id="textform"}}
 		{{> afQuickField name="texttype" id="text-filter" firstOption=false}}
 	{{/autoForm}}
 	<table class="table table-condensed">
 		<thead>
 			<tr>
-				<td>Naam</td>
+				<td><b>Naam</b></td>
 				<td class="button-column-header"></td>
 			</tr>
 		</thead>
 		<tbody>
-			{{#each texts}}
+			{{#each text}}
 				<tr class="text-row">
 					<td>{{name}}</td>
 					<td class="button-column">

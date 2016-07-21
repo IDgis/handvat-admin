@@ -3,17 +3,40 @@ Router.configure({
 });
 
 Router.route('/handvat-admin/', {
-	name: 'list'
+	name: 'textlist'
 });
 
-Router.route('/add', {
-	name: 'add',
-	template: 'editor'
+Router.route('/text/add', {
+	name: 'textadd',
+	template: 'textform'
 });
 
-Router.route('/edit/:_id', function () {
-	var text = Texts.findOne({_id: this.params._id});
-	this.render('editor', {data: text});
+Router.route('/text/edit/:_id', function () {
+	var text = Text.findOne({_id: this.params._id});
+	this.render('textform', {data: text});
 }, {
-    name: 'edit'
+    name: 'textedit'
+});
+
+Router.route('/coupling', {
+	name: 'couplinglist'
+});
+
+Router.route('/coupling/add', {
+	name: 'couplingadd',
+	template: 'couplingform'
+});
+
+Router.route('/coupling/leidend/:_id', function () {
+	var coupling = CouplingLeidend.findOne({_id: this.params._id});
+	this.render('couplingform', {data: coupling});
+}, {
+    name: 'couplingleidendedit'
+});
+
+Router.route('/coupling/ontwerp/:_id', function () {
+	var coupling = CouplingOntwerp.findOne({_id: this.params._id});
+	this.render('couplingform', {data: coupling});
+}, {
+    name: 'couplingontwerpedit'
 });

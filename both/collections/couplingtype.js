@@ -1,0 +1,1 @@
+CouplingType = new Mongo.Collection("couplingtype");

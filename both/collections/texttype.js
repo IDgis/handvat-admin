@@ -1,0 +1,1 @@
+TextType = new Mongo.Collection("texttype");
