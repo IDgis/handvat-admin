@@ -1,3 +1,5 @@
+Meteor.subscribe('text_types');
+
 Template.textform.onRendered(function() {
 	Session.set('tab', null);
 });

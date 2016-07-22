@@ -1,3 +1,6 @@
+Meteor.subscribe('leidende_beginselen');
+Meteor.subscribe('ontwerp_principes');
+
 Template.couplinglist.onRendered(function() {
 	Session.set('tab', 'coupling');
 	Session.set('filterCoupling', 'leidend_beginsel');

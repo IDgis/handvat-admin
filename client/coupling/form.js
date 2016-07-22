@@ -1,3 +1,5 @@
+Meteor.subscribe('coupling_types');
+
 Template.couplingform.helpers({
 	isEqual: function(a, b) {
 		return a === b;
