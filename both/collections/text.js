@@ -38,7 +38,13 @@ Text.attachSchema (new SimpleSchema({
 }));
 
 Text.allow({
-	insert: function () { return true; },
-	update: function () { return true; },
-	remove: function () { return true; }
+	insert: function(userId, doc) {
+		return doc && doc.userId === userId;
+	},
+	update: function(userId, doc) {
+		return doc && doc.userId === userId;
+	},
+	remove: function(userId, doc) {
+		return doc && doc.userId === userId;
+	}
 });
