@@ -1,10 +1,6 @@
 var textHooks = {
   before: {
     insert: function(doc) {
-      if(Meteor.userId()){
-    	doc.userId = Meteor.userId();
-      }
-      
       var clean = sanitizeHtml(doc.content, {
 	    allowedTags: [ 'div', 'p', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 
 	      'img', 'b', 'u', 'i', 'ol', 'ul', 'li', 'table', 'tbody', 

@@ -33,15 +33,15 @@ Meteor.startup(function () {
 });
 
 Meteor.publish('texts', function() {
-	return Text.find({userId: this.userId});
+	return Text.find({});
 });
 
 Meteor.publish('leidende_beginselen', function() {
-	return CouplingLeidend.find({userId: this.userId});
+	return CouplingLeidend.find({});
 });
 
 Meteor.publish('ontwerp_principes', function() {
-	return CouplingOntwerp.find({userId: this.userId});
+	return CouplingOntwerp.find({});
 });
 
 Meteor.publish('text_types', function() {

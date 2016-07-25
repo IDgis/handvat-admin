@@ -21,16 +21,9 @@
 							<a>Koppelingen</a>
 						</li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
-				      {{> loginButtons}}
-				    </ul>
 				</div>
 			</div>
 		</nav>
-	    {{#if currentUser}}
-	        {{> yield}}
-        {{else}}
-			<h4>Je bent niet ingelogd.</h4>
-		{{/if}}
-    </div>
+	   {{> yield}}
+     </div>
 </template>
