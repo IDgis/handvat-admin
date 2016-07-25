@@ -73,7 +73,7 @@ Router.map(function () {
 	    	 );
 	      });
 	      
-	      this.response.setHeader('Content-Type', 'application/json');
+	      this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
 	      this.response.end(EJSON.stringify(newTexts, {indent: true}));
 	  }
 	});
@@ -86,7 +86,7 @@ Router.map(function () {
 	    action: function () {
 	      var coupling = CouplingLeidend.find().fetch();
 	      
-	      this.response.setHeader('Content-Type', 'application/json');
+	      this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
 	      this.response.end(EJSON.stringify(coupling, {indent: true}));
 	  }
 	});
@@ -99,7 +99,7 @@ Router.map(function () {
 	    action: function () {
 	      var coupling = CouplingOntwerp.find().fetch();
 	      
-	      this.response.setHeader('Content-Type', 'application/json');
+	      this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
 	      this.response.end(EJSON.stringify(coupling, {indent: true}));
 	  }
 	});
