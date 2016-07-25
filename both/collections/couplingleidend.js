@@ -24,20 +24,17 @@ CouplingLeidend.attachSchema (new SimpleSchema({
     	
     	return avs;
     }
-  },
-  userId: {
-	  type: String,
   }
 }));
 
 CouplingLeidend.allow({
-	insert: function(userId, doc){
-	    return doc && doc.userId === userId;
+	insert: function() {
+	    return true;
 	},
-	update: function(userId, doc){
-	    return doc && doc.userId === userId;
+	update: function() {
+	    return true;
 	},
-	remove: function(userId, doc){
-	    return doc && doc.userId === userId;
+	remove: function() {
+	    return true;
 	}
 });
