@@ -7,7 +7,7 @@ Template.textlist.onRendered(function() {
 
 Template.textlist.helpers({
   text: function() {
-    return Text.find({ texttype: Session.get('filterText') });
+    return Text.find({ texttype: Session.get('filterText') }, { sort: { name: 1 } });
   }
 });
 
