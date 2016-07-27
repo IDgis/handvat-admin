@@ -1,8 +1,17 @@
 <template name="textlist">
 	<h3>Teksten</h3>
-	{{#autoForm collection="Text" id="textform"}}
-		{{> afQuickField name="texttype" id="text-filter" firstOption=false}}
-	{{/autoForm}}
+	<select id="text-filter" class="form-control">
+		<option value="landschapstype">landschapstype</option>
+		<option value="sector">sector</option>
+		<option value="kernkwaliteit">kernkwaliteit</option>
+		<option value="leidend_beginsel">leidend beginsel</option>
+		<option value="ontwerpprincipe" selected="true">ontwerpprincipe</option>
+	</select>
+	<div type="button" class="btn btn-success col-sm-12 insert-text">
+		<a class="glyphicon glyphicon-plus create-btn">
+			<span class="create-btn-label">Maak een nieuwe tekst</span>
+		</a>
+	</div>
 	<table class="table table-condensed">
 		<thead>
 			<tr>
@@ -26,9 +35,4 @@
 			{{/each}}
 		</tbody>
 	</table>
-	<div type="button" class="btn btn-success col-sm-12 insert-text">
-		<a class="glyphicon glyphicon-plus create-btn">
-			<span class="create-btn-label">Maak een nieuwe tekst</span>
-		</a>
-	</div>
 </template>
