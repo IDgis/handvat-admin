@@ -2,7 +2,7 @@ Meteor.subscribe('texts');
 
 Template.textlist.onRendered(function() {
   Session.set('tab', 'text');
-  Session.set('filterText', 'landschapstype');
+  Session.set('filterText', 'ontwerpprincipe');
 });
 
 Template.textlist.helpers({

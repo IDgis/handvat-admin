@@ -4,6 +4,11 @@
 		<option value="leidend_beginsel">landschapstype - leidend beginsel</option>
 		<option value="land_sector_kern_ontwerp">landschapstype - sector - kernkwaliteit - ontwerpprincipe</option>
 	</select>
+	<div type="button" class="btn btn-success col-sm-12 insert-coupling">
+		<a class="glyphicon glyphicon-plus create-btn">
+			<span class="create-btn-label">Maak een nieuwe koppeling</span>
+		</a>
+	</div>
 	{{#if isEqual filterType 'leidend_beginsel'}}
 		<table class="table table-condensed">
 			<thead>
@@ -66,9 +71,4 @@
 			</tbody>
 		</table>
 	{{/if}}
-	<div type="button" class="btn btn-success col-sm-12 insert-coupling">
-		<a class="glyphicon glyphicon-plus create-btn">
-			<span class="create-btn-label">Maak een nieuwe koppeling</span>
-		</a>
-	</div>
 </template>
