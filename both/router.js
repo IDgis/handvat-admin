@@ -73,6 +73,8 @@ Router.map(function () {
 	      });
 	      
 	      this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+	      this.response.setHeader('Access-Control-Allow-Origin', '*');
+		  this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 	      this.response.end(EJSON.stringify(newTexts, {indent: true}));
 	  }
 	});
@@ -86,6 +88,8 @@ Router.map(function () {
 	      var coupling = CouplingLeidend.find().fetch();
 	      
 	      this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+	      this.response.setHeader('Access-Control-Allow-Origin', '*');
+		  this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 	      this.response.end(EJSON.stringify(coupling, {indent: true}));
 	  }
 	});
@@ -99,6 +103,8 @@ Router.map(function () {
 	      var coupling = CouplingOntwerp.find().fetch();
 	      
 	      this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+	      this.response.setHeader('Access-Control-Allow-Origin', '*');
+		  this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 	      this.response.end(EJSON.stringify(coupling, {indent: true}));
 	  }
 	});
