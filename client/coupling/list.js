@@ -11,32 +11,54 @@ Template.couplinglist.helpers({
 		return a === b;
 	},
 	couplingontwerp: function() {
-		return CouplingOntwerp.find();
+		var TempOntwerp = new Mongo.Collection();
+		
+		CouplingOntwerp.find().forEach(
+		    function(newOntwerp) {
+		    	newOntwerp.landschapstype = Text.findOne( { "_id": newOntwerp.landschapstype } );
+		    	newOntwerp.sector = Text.findOne( { "_id": newOntwerp.sector } );
+		    	newOntwerp.kernkwaliteit = Text.findOne( { "_id": newOntwerp.kernkwaliteit } );
+		    	
+		    	var ops = [];
+		    	newOntwerp.ontwerpprincipe.forEach(
+		    		function(op) {
+		    			var t = Text.findOne({ "_id": op});
+		    			ops.push(t.name);
+		    		}
+		    	);
+		    	
+		    	newOntwerp.ontwerpprincipe = ops.sort();
+		    	
+		    	TempOntwerp.insert(newOntwerp);
+		    }
+		);
+		
+		return TempOntwerp.find({}, {sort: { "landschapstype.name": 1, "sector.name": 1, "kernkwaliteit.name": 1 } });
 	},
 	couplingleidend: function() {
-		return CouplingLeidend.find();
-	},
-	getCouplingOntwerp: function(landschapstype, sector, kernkwaliteit) {
-		var lt = Text.findOne({ _id: landschapstype });
-		var s = Text.findOne({ _id: sector });
-		var k = Text.findOne({ _id: kernkwaliteit });
+		var TempLeidend = new Mongo.Collection();
 		
-		if(typeof lt !== 'undefined' && typeof s !== 'undefined' && typeof k !== 'undefined') {
-			return lt.name + " - " + s.name + " - " + k.name;
-		}
-	},
-	getCouplingLeidend: function(landschapstype) {
-		var lt = Text.findOne({ _id: landschapstype });
+		CouplingLeidend.find().forEach(
+		    function(newLeidend) {
+		    	newLeidend.landschapstype = Text.findOne( { "_id": newLeidend.landschapstype } );
+		    	
+		    	var lbs = [];
+		    	newLeidend.leidend_beginsel.forEach(
+		    		function(lb) {
+		    			var t = Text.findOne({ "_id": lb});
+		    			if(typeof t !== 'undefined') {
+		    				lbs.push(t.name);
+		    			}
+		    		}
+		    	);
+		    	
+		    	newLeidend.leidend_beginsel = lbs.sort();
+		    	
+		    	TempLeidend.insert(newLeidend);
+		    }
+		);
 		
-		if(typeof lt !== 'undefined') {
-			return lt.name;
-		}
-	},
-	getTextName: function(id) {
-		var op = Text.findOne({ _id: id });
-		if(typeof op !== 'undefined') {
-			return op.name;
-		}
+		return TempLeidend.find({}, {sort: { "landschapstype.name": 1 } });
 	},
 	filterType: function() {
 		if(typeof Session.get('filterCoupling') === 'undefined') {

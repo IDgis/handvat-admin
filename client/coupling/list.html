@@ -21,10 +21,10 @@
 			<tbody>
 				{{#each couplingleidend}}
 					<tr class="text-row">
-						<td>{{getCouplingLeidend landschapstype}}</td>
+						<td>{{landschapstype.name}}</td>
 						<td>
 							{{#each leidend_beginsel}}
-								<span>{{getTextName this}}</span>
+								<span>{{this}}</span>
 							{{/each}}
 						</td>
 						<td class="button-column">
@@ -52,10 +52,10 @@
 			<tbody>
 				{{#each couplingontwerp}}
 					<tr class="text-row">
-						<td>{{getCouplingOntwerp landschapstype sector kernkwaliteit}}</td>
+						<td>{{landschapstype.name}} - {{sector.name}} - {{kernkwaliteit.name}}</td>
 						<td>
 							{{#each ontwerpprincipe}}
-								<span>{{getTextName this}}</span>
+								<span>{{this}}</span>
 							{{/each}}
 						</td>
 						<td class="button-column">
