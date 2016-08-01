@@ -35,6 +35,18 @@ Template.couplingform.helpers({
 			options.push({label: item.name, value: item._id});
 		});
 		
+		function compare(a, b) {
+			if (a.label < b.label) {
+				return -1;
+			} if (a.label > b.label) {
+				return 1;
+			}
+			
+			return 0;
+		}
+		
+		options.sort(compare);
+		
 		return options;
 	},
 	couplingDoc: function() {
