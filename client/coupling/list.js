@@ -23,7 +23,9 @@ Template.couplinglist.helpers({
 		    	newOntwerp.ontwerpprincipe.forEach(
 		    		function(op) {
 		    			var t = Text.findOne({ "_id": op});
-		    			ops.push(t.name);
+		    			if(typeof t !== 'undefined') {
+		    				ops.push(t.name);
+		    			}
 		    		}
 		    	);
 		    	
