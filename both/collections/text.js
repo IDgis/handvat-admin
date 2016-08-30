@@ -9,14 +9,15 @@ Text.attachSchema (new SimpleSchema({
 	texttype: {
 		type: String,
 		label: "Type", 
-		allowedValues: ["landschapstype", "sector", "kernkwaliteit", "leidend_beginsel", "ontwerpprincipe"],
+		allowedValues: ["landschapstype", "sector", "kernkwaliteit", "leidend_beginsel", "ontwerpprincipe", "algemeen"],
 		autoform: {
 	      options: [
 	        {label: 'landschapstype', value: 'landschapstype'},
 	        {label: 'sector', value: 'sector'},
 	        {label: 'kernkwaliteit', value: 'kernkwaliteit'},
 	        {label: 'leidend beginsel', value: 'leidend_beginsel'},
-	        {label: 'ontwerpprincipe', value: 'ontwerpprincipe'}
+	        {label: 'ontwerpprincipe', value: 'ontwerpprincipe'},
+	        {label: 'algemeen', value: 'algemeen'}
 	      ]
 	    }
 	},
