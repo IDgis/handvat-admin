@@ -9,7 +9,7 @@ Text.attachSchema (new SimpleSchema({
 	texttype: {
 		type: String,
 		label: "Type", 
-		allowedValues: ["landschapstype", "sector", "kernkwaliteit", "leidend_beginsel", "ontwerpprincipe", "algemeen"],
+		allowedValues: ["landschapstype", "sector", "kernkwaliteit", "leidend_beginsel", "ontwerpprincipe", "algemeen", "deelgebied"],
 		autoform: {
 	      options: [
 	        {label: 'landschapstype', value: 'landschapstype'},
@@ -17,7 +17,8 @@ Text.attachSchema (new SimpleSchema({
 	        {label: 'kernkwaliteit', value: 'kernkwaliteit'},
 	        {label: 'leidend beginsel', value: 'leidend_beginsel'},
 	        {label: 'ontwerpprincipe', value: 'ontwerpprincipe'},
-	        {label: 'algemeen', value: 'algemeen'}
+	        {label: 'algemeen', value: 'algemeen'},
+	        {label: 'deelgebied', value: 'deelgebied'}
 	      ]
 	    }
 	},
