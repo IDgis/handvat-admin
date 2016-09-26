@@ -1,25 +1,37 @@
 Meteor.startup(function () {
-  if (TextType.find().count() === 0) {
-	  TextType.insert(
-        { name: 'landschapstype', label: 'landschapstype' }
-      );
-    
-	  TextType.insert(
-        { name: 'sector', label: 'sector' }
-      ); 
-    
-	  TextType.insert(
-	    { name: 'kernkwaliteit', label: 'kernkwaliteit' }
-      ); 
-    
-	  TextType.insert(
-        { name: 'leidend_beginsel', label: 'leidend beginsel' }
-      ); 
-    
-	  TextType.insert(
-        { name: 'ontwerpprincipe', label: 'ontwerpprincipe' }
-      ); 
-  }
+  TextType.remove({});
+  
+  TextType.insert(
+    { name: 'algemeen', label: 'algemeen' }
+  );
+  
+  TextType.insert(
+    { name: 'deelgebied', label: 'deelgebied' }
+  );
+  
+  TextType.insert(
+    { name: 'landschapstype', label: 'landschapstype' }
+  );
+
+  TextType.insert(
+    { name: 'sector', label: 'sector' }
+  ); 
+  
+  TextType.insert(
+    { name: 'sector_icoon', label: 'sector icoon' }
+  ); 
+
+  TextType.insert(
+    { name: 'kernkwaliteit', label: 'kernkwaliteit' }
+  ); 
+
+  TextType.insert(
+    { name: 'leidend_beginsel', label: 'leidend beginsel' }
+  ); 
+
+  TextType.insert(
+    { name: 'ontwerpprincipe', label: 'ontwerpprincipe' }
+  );
   
   if(CouplingType.find().count() === 0) {
 	  CouplingType.insert(
