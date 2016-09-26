@@ -51,25 +51,28 @@ Router.map(function () {
 	      
 	      texts.forEach(function(text) {
 	    	 var html = text.content;
-	    	 
+	    	 var texttype = text.texttype;
 	    	 var i = -1;
 	    	 var images = [];
-	    	 while ((i = html.indexOf('<img', i + 1)) != -1){
-	    	   var indexEnd = html.indexOf('>', i) + 1;
-	    	   images.push(html.substring(i, indexEnd));
-	    	   
-	    	   var html = html.replace(html.substring(i, indexEnd), '');
+	    	 
+	    	 if(texttype === 'ontwerpprincipe' || texttype === 'leidend_beginsel') {
+	    		 while ((i = html.indexOf('<img', i + 1)) != -1){
+	  	    	   var indexEnd = html.indexOf('>', i) + 1;
+	  	    	   images.push(html.substring(i, indexEnd));
+	  	    	   
+	  	    	   html = html.replace(html.substring(i, indexEnd), '');
+	  	    	 }
 	    	 }
 	    	 
 	    	 newTexts.push(
-	    	   {
-	    		   id: text._id,
-	    		   name: text.name,
-	    		   texttype: text.texttype,
-	    		   html: html,
-	    		   images: images
-	    	   }
-	    	 );
+  	    	   {
+  	    		   id: text._id,
+  	    		   name: text.name,
+  	    		   texttype: text.texttype,
+  	    		   html: html,
+  	    		   images: images
+  	    	   }
+  	    	 );
 	      });
 	      
 	      this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
