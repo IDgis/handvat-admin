@@ -68,6 +68,7 @@ Router.map(function () {
   	    	   {
   	    		   id: text._id,
   	    		   name: text.name,
+  	    		   appCoupling: text.appCoupling,
   	    		   texttype: text.texttype,
   	    		   html: html,
   	    		   images: images
