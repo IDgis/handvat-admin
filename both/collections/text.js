@@ -56,7 +56,21 @@ Text.attachSchema (new SimpleSchema({
 	},
 	content: {
 		type: String,
-		label: "Inhoud",
+		label: "HTML viewer",
+		optional: true,
+		autoform: {
+			afFieldInput: {
+				type: 'summernote',
+				settings: {
+					height: 450
+				}
+			}
+		}
+	},
+	contentPrint: {
+		type: String,
+		label: "HTML print",
+		optional: true,
 		autoform: {
 			afFieldInput: {
 				type: 'summernote',
