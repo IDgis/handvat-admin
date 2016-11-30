@@ -24,6 +24,10 @@ Meteor.startup(function () {
   TextType.insert(
     { name: 'kernkwaliteit', label: 'kernkwaliteit' }
   ); 
+  
+  TextType.insert(
+	{ name: 'legenda', label: 'legenda' }
+  );
 
   TextType.insert(
     { name: 'leidend_beginsel', label: 'leidend beginsel' }

@@ -38,14 +38,15 @@ Text.attachSchema (new SimpleSchema({
 	texttype: {
 		type: String,
 		label: "Type", 
-		allowedValues: ["landschapstype", "sector", "sector_icoon", "kernkwaliteit", "leidend_beginsel", "ontwerpprincipe", 
-		                "algemeen", "deelgebied"],
+		allowedValues: ["landschapstype", "sector", "sector_icoon", "kernkwaliteit", "legenda", "leidend_beginsel", 
+		                "ontwerpprincipe", "algemeen", "deelgebied"],
 		autoform: {
 	      options: [
 	        {label: 'landschapstype', value: 'landschapstype'},
 	        {label: 'sector', value: 'sector'},
 	        {label: 'sector icoon', value: 'sector_icoon'},
 	        {label: 'kernkwaliteit', value: 'kernkwaliteit'},
+	        {label: 'legenda', value: 'legenda'},
 	        {label: 'leidend beginsel', value: 'leidend_beginsel'},
 	        {label: 'ontwerpprincipe', value: 'ontwerpprincipe'},
 	        {label: 'algemeen', value: 'algemeen'},
