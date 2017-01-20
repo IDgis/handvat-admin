@@ -92,33 +92,40 @@ Router.map(function () {
 	    action: function () {
 	    	var text = Text.findOne({_id: this.params.id});
 	    	
-	    	var html = text.content;
-    		var i = -1;
-    		var images = [];
-    		
-    		if(typeof html !== 'undefined' && (text.texttype === 'ontwerpprincipe' || text.texttype === 'leidend_beginsel')) {
-    			while ((i = html.indexOf('<img', i + 1)) != -1) {
-    				var indexEnd = html.indexOf('>', i) + 1;
-    				images.push(html.substring(i, indexEnd));
-    				
-    				html = html.replace(html.substring(i, indexEnd), '');
-    			}
-    		}
-    	 
-    		var newText = {
-    			id: text._id,
-    			name: text.name,
-    	    	appCoupling: text.appCoupling,
-    	    	texttype: text.texttype,
-    	    	html: html,
-    	    	print: text.contentPrint,
-    	    	images: images
-    		}
-	      
-		    this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
-		    this.response.setHeader('Access-Control-Allow-Origin', '*');
-			this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-		    this.response.end(EJSON.stringify(newText, {indent: true}));
+	    	if(typeof text !== 'undefined') {
+	    		var html = text.content;
+	    		var i = -1;
+	    		var images = [];
+	    		
+	    		if(typeof html !== 'undefined' && (text.texttype === 'ontwerpprincipe' || text.texttype === 'leidend_beginsel')) {
+	    			while ((i = html.indexOf('<img', i + 1)) != -1) {
+	    				var indexEnd = html.indexOf('>', i) + 1;
+	    				images.push(html.substring(i, indexEnd));
+	    				
+	    				html = html.replace(html.substring(i, indexEnd), '');
+	    			}
+	    		}
+	    	 
+	    		var newText = {
+	    			id: text._id,
+	    			name: text.name,
+	    	    	appCoupling: text.appCoupling,
+	    	    	texttype: text.texttype,
+	    	    	html: html,
+	    	    	print: text.contentPrint,
+	    	    	images: images
+	    		}
+	    		
+	    		this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+			    this.response.setHeader('Access-Control-Allow-Origin', '*');
+				this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+			    this.response.end(EJSON.stringify(newText, {indent: true}));
+	    	} else {
+	    		this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+			    this.response.setHeader('Access-Control-Allow-Origin', '*');
+				this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+			    this.response.end(EJSON.stringify(text, {indent: true}));
+	    	}
 	    }
 	});
 });
@@ -130,33 +137,40 @@ Router.map(function () {
 	    action: function () {
 	    	var text = Text.findOne({appCoupling: this.params.appCoupling});
 	    	
-	    	var html = text.content;
-    		var i = -1;
-    		var images = [];
-    		
-    		if(typeof html !== 'undefined' && (text.texttype === 'ontwerpprincipe' || text.texttype === 'leidend_beginsel')) {
-    			while ((i = html.indexOf('<img', i + 1)) != -1) {
-    				var indexEnd = html.indexOf('>', i) + 1;
-    				images.push(html.substring(i, indexEnd));
-    				
-    				html = html.replace(html.substring(i, indexEnd), '');
-    			}
-    		}
-    	 
-    		var newText = {
-    			id: text._id,
-    			name: text.name,
-    	    	appCoupling: text.appCoupling,
-    	    	texttype: text.texttype,
-    	    	html: html,
-    	    	print: text.contentPrint,
-    	    	images: images
-    		}
-	      
-		    this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
-		    this.response.setHeader('Access-Control-Allow-Origin', '*');
-			this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-		    this.response.end(EJSON.stringify(newText, {indent: true}));
+	    	if(typeof text !== 'undefined') {
+	    		var html = text.content;
+	    		var i = -1;
+	    		var images = [];
+	    		
+	    		if(typeof html !== 'undefined' && (text.texttype === 'ontwerpprincipe' || text.texttype === 'leidend_beginsel')) {
+	    			while ((i = html.indexOf('<img', i + 1)) != -1) {
+	    				var indexEnd = html.indexOf('>', i) + 1;
+	    				images.push(html.substring(i, indexEnd));
+	    				
+	    				html = html.replace(html.substring(i, indexEnd), '');
+	    			}
+	    		}
+	    	 
+	    		var newText = {
+	    			id: text._id,
+	    			name: text.name,
+	    	    	appCoupling: text.appCoupling,
+	    	    	texttype: text.texttype,
+	    	    	html: html,
+	    	    	print: text.contentPrint,
+	    	    	images: images
+	    		}
+		      
+			    this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+			    this.response.setHeader('Access-Control-Allow-Origin', '*');
+				this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+			    this.response.end(EJSON.stringify(newText, {indent: true}));
+	    	} else {
+	    		this.response.setHeader('Content-Type', 'application/json; charset=UTF-8');
+			    this.response.setHeader('Access-Control-Allow-Origin', '*');
+				this.response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+			    this.response.end(EJSON.stringify(text, {indent: true}));
+	    	}
 	    }
 	});
 });
