@@ -14,8 +14,9 @@ Text.attachSchema (new SimpleSchema({
 		                "stap-1-links", "stap-1-rechts", "stap-2-links", "stap-3-deelgebied", "stap-3-beginselen", 
 		                "stap-4-links", "stap-5-links", "stap-6-links", "popup-handleiding", "popup-help", "popup-contact", 
 		                "popup-links", "popup-disclaimer", "kernkwaliteit-relief", "kernkwaliteit-cultuurhistorie", 
-		                "kernkwaliteit-groenkarakter", "kernkwaliteit-openbesloten", "print-logo", "print-doel-handvat",
-		                "print-deelgebied-inleiding", "print-beginselen-inleiding", "print-disclaimer-colofon"],
+		                "kernkwaliteit-groenkarakter", "kernkwaliteit-openbesloten", "kaart-pol", "kaart-landschapstypen", 
+		                "kaart-natuurbeheerplan", "print-logo", "print-doel-handvat", "print-deelgebied-inleiding", 
+		                "print-beginselen-inleiding", "print-disclaimer-colofon"],
 		
 		autoform: {
 		  options: [
@@ -33,6 +34,9 @@ Text.attachSchema (new SimpleSchema({
 		    {label: 'kernkwaliteit-cultuurhistorie', value: 'kernkwaliteit-cultuurhistorie'},
 		    {label: 'kernkwaliteit-groenkarakter', value: 'kernkwaliteit-groenkarakter'},
 		    {label: 'kernkwaliteit-openbesloten', value: 'kernkwaliteit-openbesloten'},
+		    {label: 'kaart-pol', value: 'kaart-pol'},
+		    {label: 'kaart-landschapstypen', value: 'kaart-landschapstypen'},
+		    {label: 'kaart-natuurbeheerplan', value: 'kaart-natuurbeheerplan'},
 		    {label: 'print-logo', value: 'print-logo'},
 		    {label: 'print-doel-handvat', value: 'print-doel-handvat'},
 		    {label: 'print-deelgebied-inleiding', value: 'print-deelgebied-inleiding'},
@@ -44,7 +48,7 @@ Text.attachSchema (new SimpleSchema({
 	texttype: {
 		type: String,
 		label: "Type", 
-		allowedValues: ["landschapstype", "sector", "sector_icoon", "kernkwaliteit", "legenda", "leidend_beginsel", 
+		allowedValues: ["landschapstype", "sector", "sector_icoon", "kernkwaliteit", "kaart", "legenda", "leidend_beginsel", 
 		                "ontwerpprincipe", "algemeen", "deelgebied"],
 		autoform: {
 	      options: [
@@ -52,6 +56,7 @@ Text.attachSchema (new SimpleSchema({
 	        {label: 'sector', value: 'sector'},
 	        {label: 'sector icoon', value: 'sector_icoon'},
 	        {label: 'kernkwaliteit', value: 'kernkwaliteit'},
+	        {label: 'kaart', value: 'kaart'},
 	        {label: 'legenda', value: 'legenda'},
 	        {label: 'leidend beginsel', value: 'leidend_beginsel'},
 	        {label: 'ontwerpprincipe', value: 'ontwerpprincipe'},

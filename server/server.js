@@ -15,15 +15,19 @@ Meteor.startup(function () {
 
   TextType.insert(
     { name: 'sector', label: 'sector' }
-  ); 
+  );
   
   TextType.insert(
     { name: 'sector_icoon', label: 'sector icoon' }
-  ); 
+  );
 
   TextType.insert(
     { name: 'kernkwaliteit', label: 'kernkwaliteit' }
-  ); 
+  );
+
+  TextType.insert(
+    { name: 'kaart', label: 'kaart' }
+  );
   
   TextType.insert(
 	{ name: 'legenda', label: 'legenda' }
@@ -31,7 +35,7 @@ Meteor.startup(function () {
 
   TextType.insert(
     { name: 'leidend_beginsel', label: 'leidend beginsel' }
-  ); 
+  );
 
   TextType.insert(
     { name: 'ontwerpprincipe', label: 'ontwerpprincipe' }
