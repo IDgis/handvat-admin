@@ -1,4 +1,9 @@
-Meteor.subscribe('texts');
+import './list.html';
+import './list.css';
+
+import { Text } from '/imports/api/collections/text.js';
+import { CouplingLeidend } from '/imports/api/collections/couplingleidend.js';
+import { CouplingOntwerp } from '/imports/api/collections/couplingontwerp.js';
 
 Template.textlist.onRendered(function() {
   Session.set('tab', 'text');
@@ -9,15 +14,16 @@ Template.textlist.helpers({
   text: function() {
     return Text.find({ texttype: Session.get('filterText') }, { sort: { name: 1 } });
   },
+  
   disableDelete: function(id) {
-	  var allowed = checkDeleteAllowed(id);
-	  
-	  ret = '';
-	  if(!allowed) {
-		  ret = 'disabled';
-	  }
-	  
-	  return ret;
+    var allowed = checkDeleteAllowed(id);
+    
+    ret = '';
+    if(!allowed) {
+      ret = 'disabled';
+    }
+    
+    return ret;
   }
 });
 
@@ -62,7 +68,7 @@ function checkDeleteAllowed(id) {
     if(item.landschapstype === id || item.sector === id || item.kernkwaliteit === id) {
       allowed = false;
     }
-	  
+    
     item.ontwerpprincipe.forEach(function(element) {
       if(element === id) {
         allowed = false;

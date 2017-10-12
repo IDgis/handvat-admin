@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 aldeed:autoform
 aldeed:collection2
 iron:router
@@ -18,4 +17,21 @@ mpowaga:autoform-summernote
 fortawesome:fontawesome
 djedi:sanitize-html
 djedi:sanitize-html-client
-underscore
+underscore@1.0.10
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+standard-minifier-css
+standard-minifier-js
+shell-server
+ecmascript

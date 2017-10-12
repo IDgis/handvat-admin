@@ -12,7 +12,7 @@
 	{{/if}}
 	
 	{{#if isNotEqual filterType 'geen'}}
-		{{#autoForm collection="Text" id="textform" type=formType doc=textDoc}}
+		{{#autoForm collection=text schema=textSchema id="textform" type=formType doc=textDoc}}
 			<fieldset>
 				{{> afQuickField name="name"}}
 				{{> afQuickField name="appCoupling"}}
