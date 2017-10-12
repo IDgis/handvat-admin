@@ -1,0 +1,1 @@
+export const CouplingType = new Mongo.Collection("couplingtype");

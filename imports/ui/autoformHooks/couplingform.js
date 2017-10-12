@@ -1,6 +1,6 @@
 var couplingLeidendHooks = {
   onSuccess: function(formType, result) {
-    Router.go('couplinglist');
+	Router.go('couplinglist');
   }
 }
 

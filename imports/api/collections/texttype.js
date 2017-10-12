@@ -1,0 +1,1 @@
+export const TextType = new Mongo.Collection("texttype");
