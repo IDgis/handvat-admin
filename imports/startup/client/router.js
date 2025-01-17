@@ -37,14 +37,14 @@ Router.route('/handvat-admin/coupling/add', {
   template: 'couplingform'
 });
 
-Router.route('/handvat-admin/coupling/leidend/:_id', function () {
+Router.route('/handvat-admin/coupling/leidend/edit/:_id', function () {
   var coupling = CouplingLeidend.findOne({_id: this.params._id});
   this.render('couplingform', {data: coupling});
 }, {
   name: 'couplingleidendedit'
 });
 
-Router.route('/handvat-admin/coupling/ontwerp/:_id', function () {
+Router.route('/handvat-admin/coupling/ontwerp/edit/:_id', function () {
   var coupling = CouplingOntwerp.findOne({_id: this.params._id});
   this.render('couplingform', {data: coupling});
 }, {
