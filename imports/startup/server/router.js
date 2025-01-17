@@ -3,8 +3,8 @@ import { CouplingLeidend } from '/imports/api/collections/couplingleidend.js';
 import { CouplingOntwerp } from '/imports/api/collections/couplingontwerp.js';
 
 Router.map(function () {
-  this.route('text_json', {
-    path: '/text/json',
+  this.route('api-texts', {
+    path: '/api/texts',
     where: 'server',
     action: function () {
       var texts = Text.find();
@@ -45,8 +45,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('text_json/id/:id', {
-    path: '/text/json/id/:id',
+  this.route('api-text-id', {
+    path: '/api/text/id/:id',
     where: 'server',
     action: function () {
       var text = Text.findOne({_id: this.params.id});
@@ -89,8 +89,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('text_json/appCoupling/:appCoupling', {
-    path: '/text/json/appCoupling/:appCoupling',
+  this.route('api-text-app-coupling', {
+    path: '/api/text/app-coupling/:appCoupling',
     where: 'server',
     action: function () {
       var text = Text.findOne({appCoupling: this.params.appCoupling});
@@ -133,8 +133,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('text_json/texttype/:texttype', {
-    path: '/text/json/texttype/:texttype',
+  this.route('api-text-texttype', {
+    path: '/api/text/texttype/:texttype',
     where: 'server',
     action: function () {
       var texts = Text.find({texttype: this.params.texttype});
@@ -174,8 +174,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('text_json/name/:name', {
-    path: '/text/json/name/:name',
+  this.route('api-text-name', {
+    path: '/api/text/name/:name',
     where: 'server',
     action: function () {
       var texts = Text.find({name: this.params.name});
@@ -215,8 +215,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('text_json/typename/:texttype/:name', {
-    path: '/text/json/typename/:texttype/:name',
+  this.route('api-text-typename', {
+    path: '/api/text/typename/:texttype/:name',
     where: 'server',
     action: function () {
       var texts = Text.find({texttype: this.params.texttype, name: this.params.name});
@@ -256,8 +256,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('coupling_leidend_json', {
-    path: '/coupling/leidend/json',
+  this.route('api-coupling-leidend', {
+    path: '/api/coupling/leidend',
     where: 'server',
     action: function () {
       var coupling = CouplingLeidend.find().fetch();
@@ -271,8 +271,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('coupling_leidend_json/:id', {
-    path: '/coupling/leidend/json/:id',
+  this.route('api-coupling-leidend-id', {
+    path: '/api/coupling/leidend/:id',
     where: 'server',
     action: function () {
       var algemeen = Text.findOne({texttype: 'landschapstype', name: 'Algemeen'});
@@ -296,8 +296,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('coupling_ontwerp_json', {
-    path: '/coupling/ontwerp/json',
+  this.route('api-coupling-ontwerp', {
+    path: '/api/coupling/ontwerp',
     where: 'server',
     action: function () {
       var coupling = CouplingOntwerp.find().fetch();
@@ -311,8 +311,8 @@ Router.map(function () {
 });
 
 Router.map(function () {
-  this.route('coupling_ontwerp_json/:landschapstype/:sector/:kernkwaliteit', {
-    path: '/coupling/ontwerp/json/:landschapstype/:sector/:kernkwaliteit',
+  this.route('api-coupling-ontwerp-type-sector-kwaliteit', {
+    path: '/api/coupling/ontwerp/:landschapstype/:sector/:kernkwaliteit',
 	where: 'server',
 	action: function () {
 	  var algemeen = Text.findOne({texttype: 'landschapstype', name: 'Algemeen'});
